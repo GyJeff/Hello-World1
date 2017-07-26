@@ -1,0 +1,42 @@
+<div class="alert-container">
+  <div class="alert-div">
+    <div class="alert-content" *ngIf="isAlert" [@flyInOut]="isAlert?'in':''" >
+    <alert [alertMessage]="{alterStyle:alertMessage.alertStyle,title:alertMessage.title,message:alertMessage.message}"></alert>
+    </div>
+  </div>
+</div>
+<div class="templatemo-content-container">
+  <div class="search_div">
+    <div class="search_title">
+      <div class="title">
+        <b>Search Condition</b>
+      </div>
+    </div>
+    <div class="search_item">
+      <form class="form-inline">
+        <div class="form-group" id="name-group">
+          <label>Name：</label>
+          <input type="text" class="form-control" [(ngModel)]="name" name="name" [formControl]="nameControl"  #PersonName/>
+          <match-list [left]="PersonName.offsetLeft" [width]="PersonName.offsetWidth" [displayList]="nameList" (DropDownClickEmit)="MatchedName($event)"></match-list>
+        </div>
+        <div class="form-group">
+          <label>Sex：</label>
+          <select class="form-control" name="sex" [(ngModel)]="sex">
+            <option></option>
+            <option>man</option>
+            <option>woman</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Age：</label>
+          <input type="text" class="form-control" name="age" [(ngModel)]="age"/>
+        </div>
+        <input type="button"  class="btn btn-primary" value="Query" (click)="GetPersonInfoes()"/>
+        <input type="submit" id="btnSub" class="btn btn-primary" value="ADD" (click)="ShowUserEditForm()"/>
+      </form>
+    </div>
+  </div>
+  <user-detail (showEmitForm)="ShowUserEditForm($event)" (deletePersonEmit)="DeletePerson($event)"></user-detail>
+  <user-edit (createPersonEmit)="EditPersonInfo($event)"></user-edit>
+  <page-index [pageIndexInfos]="pageIndexInfos" (selectIndexEmit)="GetPersonInfoes($event)"></page-index>
+</div>

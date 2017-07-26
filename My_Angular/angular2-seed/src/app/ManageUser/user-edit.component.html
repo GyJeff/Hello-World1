@@ -1,0 +1,66 @@
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm-4">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">{{personInfo.id==null?"Create":"Edit"}}</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideUserEditForm()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+
+        <div class="form-group">
+          <label for="name" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" placeholder="input name" [(ngModel)]="personInfo.name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Sex</label>
+          <div class="col-sm-10">
+            <label class="checkbox-inline"><input type="radio" value="man"  name="sex" [(ngModel)]="personInfo.sex"/> man</label>
+            <label class="checkbox-inline"><input type="radio" value="woman"  name="sex" [(ngModel)]="personInfo.sex"/> woman</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="age" class="col-sm-2 control-label">Age</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="age" name="age" placeholder="input age" [(ngModel)]="personInfo.age">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="email" name="email" placeholder="input email" [(ngModel)]="personInfo.email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address" class="col-sm-2 control-label">Address</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="address" name="address" placeholder="input address" [(ngModel)]="personInfo.address">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="phone" class="col-sm-2 control-label">Phone</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="input phone" [(ngModel)]="personInfo.phone">
+          </div>
+        </div>
+        <div id="last-form-group" class="form-group">
+          <div class="col-md-3 col-md-offset-9">
+          <input type="button" class="btn btn-default" value="Close" (click)="hideUserEditForm()" />
+          <input type="submit" class="btn btn-primary" value="Save" (click)="createPerson(personInfo)"/>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

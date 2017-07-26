@@ -1,0 +1,16 @@
+.search_div{border:solid 1px #a3c0e8; margin: 15px 10px 0px 10px; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px}
+.search_title{background:url(../../assert/images/search_bg.gif) repeat-x; height:25px; line-height:25px; font-size:13px;}
+.search_title .title{color:#034172; float:left; width:155px; line-height:25px; padding-left:25px; background:url(../../assert/images/s.png) no-repeat 3px;}
+.search_title .min_div{float:right; padding-right:12px; padding-top:4px;}
+.search_title .min_div .min{display:block; background:url(../../assert/images/exp.gif) no-repeat; height:15px; width:18px;}
+.search_item{margin:6px 0; font-size:13px; color:#000;}
+.search_item span{height:25px; line-height:25px; margin-left:15px; padding-right:5px; font-size:13px;}
+.search_item .btn{float: right;margin:0px 15px 0px 15px;}
+/*.search_item input[type='text']{width: 1px}*/
+.search_item form label{margin-left: 15px}
+.alert-container{width: 100%; float: right}
+.alert-container .alert-div{position: relative;z-index: 999}
+.alert-container .alert-div .alert-content{position: absolute;text-align: center;left: 0;right: 0}
+.alert-container alert{}
+.pagination-wrap li{cursor: hand}
+#name-group{position: relative}

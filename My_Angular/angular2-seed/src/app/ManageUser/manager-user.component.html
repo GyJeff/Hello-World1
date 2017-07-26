@@ -1,0 +1,35 @@
+  <div class="templatemo-content-widget no-padding">
+    <div class="panel panel-default table-responsive">
+      <table class="table table-striped table-bordered templatemo-user-table">
+        <thead>
+        <tr>
+          <td><a href="" class="white-text templatemo-sort-by"># <span class="caret"></span></a></td>
+          <td><a href="" class="white-text templatemo-sort-by">Name <span class="caret"></span></a></td>
+          <td><a href="" class="white-text templatemo-sort-by">Sex <span class="caret"></span></a></td>
+          <td><a href="" class="white-text templatemo-sort-by">Age <span class="caret"></span></a></td>
+          <td><a href="" class="white-text templatemo-sort-by">Email <span class="caret"></span></a></td>
+          <td>Addresss</td>
+          <td>Phone</td>
+          <td>Action</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let personInfo of personInfoes; let i=index">
+          <td>{{i+1}}</td>
+          <td>{{personInfo.name}}</td>
+          <td>{{personInfo.sex}}</td>
+          <td>{{personInfo.age}}</td>
+          <td>{{personInfo.email}}</td>
+          <td>{{personInfo.address}}</td>
+          <td>{{personInfo.phone}}</td>
+          <td>
+            <button class="btn btn-info" (click)="showEmitForm.emit(personInfo)">Edit</button>
+            <button class="btn btn-danger" (click)="deletePersonEmit.emit(personInfo)">Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
